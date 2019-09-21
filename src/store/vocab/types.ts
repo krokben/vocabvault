@@ -8,10 +8,16 @@ export interface VocabState {
 }
 
 export const INIT_WORDS = "INIT_WORDS";
+export const ADD_WORD = "ADD_WORD";
 
-interface InitWordAction {
+interface InitWordsAction {
   type: typeof INIT_WORDS;
   payload: Word[];
 }
 
-export type VocabActionTypes = InitWordAction;
+interface AddWordAction {
+  type: typeof ADD_WORD;
+  payload: Word;
+}
+
+export type VocabActionTypes = InitWordsAction | AddWordAction;

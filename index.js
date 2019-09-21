@@ -19,10 +19,15 @@ app.use(
 );
 
 app.get("/vocab", (req, res) => {
+  res.status(200);
   res.send([
     { content: "hello", created: 2019 },
     { content: "world", created: 2020 }
   ]);
+});
+
+app.post("/vocab", (req, res) => {
+  res.sendStatus(200);
 });
 
 app.listen(PORT, err => {
