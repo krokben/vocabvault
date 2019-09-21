@@ -1,6 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  mode: process.env.NODE_ENV !== "production" ? "development" : "production",
+  output: {
+    publicPath: "/"
+  },
   devtool: "source-map", // Enable sourcemaps for debugging webpack's output.
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -21,14 +25,6 @@ module.exports = {
         enforce: "pre",
         test: /\.js$/,
         loader: "source-map-loader"
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
       }
     ]
   },
