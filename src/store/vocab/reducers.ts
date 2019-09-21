@@ -1,7 +1,7 @@
-import { VocabState, VocabActionTypes, SEND_MESSAGE } from "./types";
+import { VocabState, VocabActionTypes, INIT_WORDS } from "./types";
 
 const initialState: VocabState = {
-  messages: []
+  words: []
 };
 
 export function vocabReducer(
@@ -9,9 +9,9 @@ export function vocabReducer(
   action: VocabActionTypes
 ): VocabState {
   switch (action.type) {
-    case SEND_MESSAGE:
+    case INIT_WORDS:
       return {
-        messages: [...state.messages, action.payload]
+        words: [...state.words, ...action.payload]
       };
     default:
       return state;

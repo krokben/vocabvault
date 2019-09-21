@@ -1,17 +1,17 @@
-export interface Message {
-  user: string;
-  message: string;
+export interface Word {
+  content: string;
+  created: number;
 }
 
 export interface VocabState {
-  messages: Message[];
+  words: Word[];
 }
 
-export const SEND_MESSAGE = "SEND_MESSAGE";
+export const INIT_WORDS = "INIT_WORDS";
 
-interface SendMessageAction {
-  type: typeof SEND_MESSAGE;
-  payload: Message;
+interface InitWordAction {
+  type: typeof INIT_WORDS;
+  payload: Word[];
 }
 
-export type VocabActionTypes = SendMessageAction;
+export type VocabActionTypes = InitWordAction;

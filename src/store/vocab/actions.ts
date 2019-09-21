@@ -1,8 +1,8 @@
-import { Message, SEND_MESSAGE, VocabActionTypes } from "./types";
+import { Word, INIT_WORDS, VocabActionTypes } from "./types";
 
-export function sendMessage(newMessage: Message): VocabActionTypes {
+export function initWords(words: Word[]): VocabActionTypes {
   return {
-    type: SEND_MESSAGE,
-    payload: newMessage
+    type: INIT_WORDS,
+    payload: words
   };
 }

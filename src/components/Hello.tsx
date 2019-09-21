@@ -1,22 +1,14 @@
 import * as React from "react";
-import { Message } from "../store/vocab/types";
+import { Word } from "../store/vocab/types";
 
 interface HelloProps {
-  sendMessage: (message: Message) => void;
-  messages: Message[];
+  words: Word[];
 }
 
 export const Hello = (props: HelloProps) => (
-  <div>
-    {props.messages.map(message => (
-      <p>
-        Hello {message.message} from {message.user}
-      </p>
+  <ul>
+    {props.words.map(word => (
+      <li>{word.word}</li>
     ))}
-    <button
-      onClick={() => props.sendMessage({ user: "Tommy", message: "World" })}
-    >
-      Click me
-    </button>
-  </div>
+  </ul>
 );
