@@ -9,6 +9,7 @@ export interface VocabState {
 
 export const INIT_WORDS = "INIT_WORDS";
 export const ADD_WORD = "ADD_WORD";
+export const REMOVE_WORD = "REMOVE_WORD";
 
 interface InitWordsAction {
   type: typeof INIT_WORDS;
@@ -20,4 +21,12 @@ interface AddWordAction {
   payload: Word;
 }
 
-export type VocabActionTypes = InitWordsAction | AddWordAction;
+interface RemoveWordAction {
+  type: typeof REMOVE_WORD;
+  payload: string;
+}
+
+export type VocabActionTypes =
+  | InitWordsAction
+  | AddWordAction
+  | RemoveWordAction;

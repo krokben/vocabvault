@@ -30,6 +30,10 @@ app.post("/vocab", (req, res) => {
   res.sendStatus(200);
 });
 
+app.delete("/vocab", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.listen(PORT, err => {
   if (err) {
     throw err;
