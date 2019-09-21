@@ -14,7 +14,12 @@ interface AppProps {
 
 class App extends React.Component<AppProps> {
   render() {
-    return <Hello compiler="TypeScript" framework="React" />;
+    return (
+      <Hello
+        sendMessage={this.props.sendMessage}
+        messages={this.props.vocab.messages}
+      />
+    );
   }
 }
 

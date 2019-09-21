@@ -1,12 +1,22 @@
 import * as React from "react";
+import { Message } from "../store/vocab/types";
 
-export interface HelloProps {
-  compiler: string;
-  framework: string;
+interface HelloProps {
+  sendMessage: (message: Message) => void;
+  messages: Message[];
 }
 
 export const Hello = (props: HelloProps) => (
-  <h1>
-    Hello from {props.compiler} and {props.framework}
-  </h1>
+  <div>
+    {props.messages.map(message => (
+      <p>
+        Hello {message.message} from {message.user}
+      </p>
+    ))}
+    <button
+      onClick={() => props.sendMessage({ user: "Tommy", message: "World" })}
+    >
+      Click me
+    </button>
+  </div>
 );
