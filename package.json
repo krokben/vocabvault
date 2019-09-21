@@ -6,6 +6,10 @@
   "repository": "https://github.com/krokben/vocabvault.git",
   "author": "Tommy Svensson",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
