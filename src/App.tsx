@@ -5,7 +5,7 @@ import { AppState } from "./store";
 import { VocabState } from "./store/vocab/types";
 import { initWords } from "./store/vocab/actions";
 
-import { Hello } from "./components/Hello";
+import { Vocab } from "./components/Vocab";
 
 interface AppProps {
   initWords: typeof initWords;
@@ -24,7 +24,7 @@ class App extends React.Component<any, AppProps> {
   };
 
   render(): JSX.Element {
-    return <Hello words={this.props.vocab.words} />;
+    return <Vocab words={this.props.vocab.words} />;
   }
 }
 

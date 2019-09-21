@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Word } from "../store/vocab/types";
 
-interface HelloProps {
+interface VocabProps {
   words: Word[];
 }
 
-export const Hello = (props: HelloProps) => (
+export const Vocab = (props: VocabProps) => (
   <ul>
     {props.words.map(word => (
-      <li>{word.word}</li>
+      <li>{word.content}</li>
     ))}
   </ul>
 );

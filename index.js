@@ -20,8 +20,8 @@ app.use(
 
 app.get("/vocab", (req, res) => {
   res.send([
-    { word: "hello", created: 2019 },
-    { word: "world", created: 2020 }
+    { content: "hello", created: 2019 },
+    { content: "world", created: 2020 }
   ]);
 });
 
