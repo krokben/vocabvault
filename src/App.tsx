@@ -13,7 +13,7 @@ interface AppProps {
 }
 
 class App extends React.Component<AppProps> {
-  render() {
+  render(): JSX.Element {
     return (
       <Hello
         sendMessage={this.props.sendMessage}
@@ -23,7 +23,7 @@ class App extends React.Component<AppProps> {
   }
 }
 
-const mapStateToProps = (state: AppState) => ({
+const mapStateToProps = (state: AppState): VocabState => ({
   vocab: state.vocab
 });
 
