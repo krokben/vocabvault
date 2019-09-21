@@ -5,10 +5,12 @@ interface VocabProps {
   words: Word[];
 }
 
-export const Vocab = (props: VocabProps) => (
+const Vocab = (props: VocabProps) => (
   <ul>
     {props.words.map(word => (
-      <li>{word.content}</li>
+      <li key={word.created}>{word.content}</li>
     ))}
   </ul>
 );
+
+export default Vocab;

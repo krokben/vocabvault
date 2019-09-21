@@ -5,7 +5,8 @@ import { AppState } from "./store";
 import { VocabState, Word } from "./store/vocab/types";
 import { initWords, addWord, removeWord } from "./store/vocab/actions";
 
-import { Vocab } from "./components/Vocab";
+import Vocab from "./components/Vocab";
+import Input from "./components/Input";
 
 interface AppProps {
   initWords: typeof initWords;
@@ -18,8 +19,8 @@ class App extends React.Component<any, AppProps> {
   componentDidMount() {
     this.getVocab();
     this.addWord({ content: "Lorem", created: 2045 });
-    this.addWord({ content: "Ipsum", created: 2045 });
-    this.addWord({ content: "Dolor", created: 2045 });
+    this.addWord({ content: "Ipsum", created: 2046 });
+    this.addWord({ content: "Dolor", created: 2047 });
     this.removeWord("ipsum");
   }
 
@@ -55,7 +56,16 @@ class App extends React.Component<any, AppProps> {
   };
 
   render(): JSX.Element {
-    return <Vocab words={this.props.vocab.words} />;
+    return (
+      <main>
+        <Vocab words={this.props.vocab.words} />
+        <Input
+          words={this.props.vocab.words}
+          addWord={this.props.addWord}
+          removeWord={this.props.removeWord}
+        />
+      </main>
+    );
   }
 }
 
