@@ -1,0 +1,9 @@
+{
+  "name": "vocabvault",
+  "version": "1.0.0",
+  "description": "Keep track of your vocabulary",
+  "main": "index.js",
+  "repository": "https://github.com/krokben/vocabvault.git",
+  "author": "Tommy Svensson",
+  "license": "MIT"
+}
