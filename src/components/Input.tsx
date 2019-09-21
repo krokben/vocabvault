@@ -8,9 +8,9 @@ interface InputProps {
 }
 
 class Input extends React.Component<InputProps> {
-  reactToInput = (event: React.FormEvent<HTMLFormElement>) => {
+  reactToInput = (event: any) => {
     event.preventDefault();
-    if (event.target.word.value === "") {
+    if (!event.target.word.value) {
       return;
     }
 
