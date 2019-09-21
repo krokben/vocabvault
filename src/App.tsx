@@ -12,7 +12,7 @@ interface AppProps {
   vocab: VocabState;
 }
 
-class App extends React.Component<AppProps> {
+class App extends React.Component<any, AppProps> {
   render(): JSX.Element {
     return (
       <Hello
@@ -23,7 +23,7 @@ class App extends React.Component<AppProps> {
   }
 }
 
-const mapStateToProps = (state: AppState): VocabState => ({
+const mapStateToProps = (state: AppState): any => ({
   vocab: state.vocab
 });
 

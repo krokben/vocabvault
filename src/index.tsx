@@ -7,7 +7,7 @@ import App from "./App";
 
 const store = configureStore();
 
-const Root = (): Provider => (
+const Root = (): any => (
   <Provider store={store}>
     <App />
   </Provider>
