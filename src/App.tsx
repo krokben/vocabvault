@@ -27,7 +27,9 @@ class App extends React.Component<any, AppProps> {
   getVocab = () => {
     fetch("/users/tommy")
       .then(response => response.json())
-      .then(data => this.props.initWords(data))
+      .then(words =>
+        this.props.initWords(words.filter((word: Word) => word.content))
+      )
       .catch(console.error);
   };
 

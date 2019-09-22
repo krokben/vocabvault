@@ -8,7 +8,7 @@ interface VocabProps {
 const Vocab = (props: VocabProps) => (
   <ul>
     {props.words.map(word => (
-      <li key={word.created}>{word.content}</li>
+      <li key={`word_${word.created}`}>{word.content}</li>
     ))}
   </ul>
 );
