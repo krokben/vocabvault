@@ -25,14 +25,14 @@ class App extends React.Component<any, AppProps> {
   }
 
   getVocab = () => {
-    fetch("/vocab")
+    fetch("/users/tommy")
       .then(response => response.json())
       .then(data => this.props.initWords(data))
       .catch(console.error);
   };
 
   addWord = (word: Word) => {
-    fetch("/vocab", {
+    fetch("/users/tommy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -44,7 +44,7 @@ class App extends React.Component<any, AppProps> {
   };
 
   removeWord = (content: string) => {
-    fetch("/vocab", {
+    fetch("/users/tommy", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
