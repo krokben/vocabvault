@@ -4,35 +4,27 @@ const webpack = require("webpack");
 const path = require("path");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const config = require("./webpack.config.js");
+const user = require("./server/routes/user");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 const compiler = webpack(config);
+const mongoose = require("mongoose");
+const mongoDB = process.env.MONGO_DB;
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 app.use(express.json());
+app.use("/users", user);
 
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
   })
 );
-
-app.get("/vocab", (req, res) => {
-  res.status(200);
-  res.send([
-    { content: "hello", created: 2019 },
-    { content: "world", created: 2020 }
-  ]);
-});
-
-app.post("/vocab", (req, res) => {
-  res.sendStatus(200);
-});
-
-app.delete("/vocab", (req, res) => {
-  res.sendStatus(200);
-});
 
 app.listen(PORT, err => {
   if (err) {
